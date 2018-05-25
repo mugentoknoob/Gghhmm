@@ -3,7 +3,6 @@
 from LineAPI.linepy import *
 from LineAPI.akad.ttypes import Message
 from LineAPI.akad.ttypes import ContentType as Type
-from gtts import gTTS
 from time import sleep
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
@@ -1359,16 +1358,16 @@ def clientBot(op):
                                 except Exception as error:
                                     logError(error)
                                     
-                            elif cmd.startswith("say-"):
-                                sep = text.split("-")
-                                sep = sep[1].split(" ")
-                                lang = sep[0]
-                                say = text.replace("say-" + lang + " ","")
-                                if lang not in list_language["list_textToSpeech"]:
-                                    return client.sendMessage(to, "Language not found")
-                                tts = gTTS(text=say, lang=lang)
-                                tts.save("hasil.mp3")
-                                client.sendAudio(to,"hasil.mp3")
+                            #elif cmd.startswith("say-"):
+                                #sep = text.split("-")
+                              #  sep = sep[1].split(" ")
+                              #  lang = sep[0]
+                             #   say = text.replace("say-" + lang + " ","")
+                            #    if lang not in list_language["list_textToSpeech"]:
+                                #    return client.sendMessage(to, "Language not found")
+                               # tts = gTTS(text=say, lang=lang)
+                               # tts.save("hasil.mp3")
+                                #client.sendAudio(to,"hasil.mp3")
                                 
                             elif cmd.startswith("searchimage"):
                                 try:
